@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61EBC1102C078C0B000F1B34 /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EBC10F2C078C0B000F1B34 /* SnapsViewController.swift */; };
 		F238173B2BFE2F1B0068999D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F238173A2BFE2F1B0068999D /* AppDelegate.swift */; };
 		F238173D2BFE2F1B0068999D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F238173C2BFE2F1B0068999D /* SceneDelegate.swift */; };
 		F238173F2BFE2F1B0068999D /* iniciarSesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F238173E2BFE2F1B0068999D /* iniciarSesionViewController.swift */; };
@@ -45,6 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		61EBC10E2C0789D9000F1B34 /* Snapchat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Snapchat.entitlements; sourceTree = "<group>"; };
+		61EBC10F2C078C0B000F1B34 /* SnapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
 		F23817372BFE2F1B0068999D /* Snapchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snapchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F238173A2BFE2F1B0068999D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F238173C2BFE2F1B0068999D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,10 +117,12 @@
 		F23817392BFE2F1B0068999D /* Snapchat */ = {
 			isa = PBXGroup;
 			children = (
+				61EBC10E2C0789D9000F1B34 /* Snapchat.entitlements */,
 				F238173A2BFE2F1B0068999D /* AppDelegate.swift */,
 				F238173C2BFE2F1B0068999D /* SceneDelegate.swift */,
 				F238173E2BFE2F1B0068999D /* iniciarSesionViewController.swift */,
 				F23817402BFE2F1B0068999D /* Main.storyboard */,
+				61EBC10F2C078C0B000F1B34 /* SnapsViewController.swift */,
 				F23817432BFE2F1D0068999D /* Assets.xcassets */,
 				F23817872BFE40AF0068999D /* contrasena (1).png */,
 				F23817452BFE2F1D0068999D /* LaunchScreen.storyboard */,
@@ -232,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61EBC1102C078C0B000F1B34 /* SnapsViewController.swift in Sources */,
 				F238173F2BFE2F1B0068999D /* iniciarSesionViewController.swift in Sources */,
 				F238173B2BFE2F1B0068999D /* AppDelegate.swift in Sources */,
 				F238173D2BFE2F1B0068999D /* SceneDelegate.swift in Sources */,
@@ -379,6 +385,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Snapchat/Snapchat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z4SL8MF2UL;
@@ -407,6 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Snapchat/Snapchat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z4SL8MF2UL;
