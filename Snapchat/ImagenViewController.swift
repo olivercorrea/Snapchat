@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class ImagenViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -19,6 +20,7 @@ class ImagenViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
+        elegirContactoBoton.isEnabled = false
 
         // Do any additional setup after loading the view.
     }
@@ -30,6 +32,19 @@ class ImagenViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func elegirContactoTapped(_ sender: Any) {
+        self.elegirContactoBoton.isEnabled = false
+        //performSegue(withIdentifier: "seleccionarContactoSegue", sender: nil)
+        let imagenesFolder = Storage.storage().reference().child("imagenes")
+        let imagenData = imageView.image?.jpegData(compressionQuality: 0.50)
+        let cargarImagen = imagenesFolder.child("\(NSUUID().uuidString).jpg").putData(imagenData!, metadata: nil) { (metadata, error) in
+            if error != nil {
+                self.mostrarAlerta(titulo: "Error", mensaje: "Se producjo un error al subir la imagen. Verifique su coneccion a internet y vuelva a intentarlo.", accion: "Aceptar")
+                self.elegirContactoBoton.isEnabled = true
+                print("Ocurrio un error al subir imagen: \(error) ")
+            } else {
+                self.performSegue(withIdentifier: "seleccionarContactoSegue", sender: nil)
+            }
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -42,7 +57,22 @@ class ImagenViewController: UIViewController, UIImagePickerControllerDelegate, U
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //let imagenesFolder = Storage.storage().reference().child("imagenes")
+        //let imagenData = imageView.image?.jpegData(compressionQuality: 0.50)
+        //imagenesFolder.child("imagenes.jpg").putData(imagenData!, metadata: nil) { (metadata, error) in
+          //  if error != nil {
+            //    print("Ocurrio un error al subir imagen: \(error) ")
+            //}
+        //}
+    }
     
+    func mostrarAlerta(titulo: String, mensaje: String, accion: String) {
+        let alerta = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)
+        let btnCANCELOK = UIAlertAction(title: accion, style: .default, handler: nil)
+        alerta.addAction(btnCANCELOK)
+        present(alerta, animated: true, completion: nil)
+    }
     
     /*
     // MARK: - Navigation

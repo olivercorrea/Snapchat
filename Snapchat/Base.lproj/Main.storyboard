@@ -182,11 +182,28 @@
                         <outlet property="descripcionTextField" destination="j6I-Yt-VYU" id="Q8v-Ax-urA"/>
                         <outlet property="elegirContactoBoton" destination="xdU-io-4d0" id="x0T-pV-uB8"/>
                         <outlet property="imageView" destination="ZvO-cs-27b" id="F8Z-tc-qzc"/>
+                        <segue destination="f6f-fj-oJz" kind="show" identifier="seleccionarContactoSegue" id="lxw-RY-bPA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ew4-Fw-9Th" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2382" y="41"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cbg-AQ-bxV">
+            <objects>
+                <viewController id="f6f-fj-oJz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GHg-St-gDG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="t9K-XS-D0e"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8Us-9p-kMB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kON-jv-rxW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3151" y="41"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="A1s-yN-03d">
