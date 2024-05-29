@@ -7,7 +7,9 @@
 
 import UIKit
 
-class ImagenViewController: UIViewController {
+class ImagenViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    var imagePicker = UIImagePickerController()
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descripcionTextField: UITextField!
@@ -16,17 +18,29 @@ class ImagenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePicker.delegate = self
 
         // Do any additional setup after loading the view.
     }
     
     @IBAction func camaraTapped(_ sender: Any) {
+        imagePicker.sourceType = .savedPhotosAlbum
+        imagePicker.allowsEditing = false
+        present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func elegirContactoTapped(_ sender: Any) {
     }
     
-    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        imageView.image = image
+        imageView.backgroundColor = UIColor.clear
+        elegirContactoBoton.isEnabled = true
+        imagePicker.dismiss(animated: true, completion: nil)
+        
+    }
     
     
     
