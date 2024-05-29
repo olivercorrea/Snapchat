@@ -112,11 +112,81 @@
                                 <action selector="cerrarSesionTapped:" destination="KN9-WB-np4" id="UOe-5T-oFk"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="CxV-hG-q1s">
+                            <connections>
+                                <segue destination="84D-tw-pZX" kind="show" id="dGr-9n-gU9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yq8-i6-DQp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1603.7383177570093" y="41.46868250539957"/>
+        </scene>
+        <!--Imagen View Controller-->
+        <scene sceneID="hwl-zF-tn2">
+            <objects>
+                <viewController id="84D-tw-pZX" customClass="ImagenViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uq3-Eu-Bno">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZvO-cs-27b">
+                                <rect key="frame" x="67.5" y="76" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="OKx-hB-Lk3"/>
+                                    <constraint firstAttribute="width" constant="240" id="OdU-je-7AQ"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descripción..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j6I-Yt-VYU">
+                                <rect key="frame" x="67.5" y="219" width="240" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="SBv-Yg-HJC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdU-io-4d0">
+                                <rect key="frame" x="67.5" y="273" width="240" height="31"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="g1d-Uh-3eI"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Elegir Contacto"/>
+                                <connections>
+                                    <action selector="elegirContactoTapped:" destination="84D-tw-pZX" eventType="touchUpInside" id="dAU-qb-ZZx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LFd-Yx-FWe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZvO-cs-27b" firstAttribute="top" secondItem="LFd-Yx-FWe" secondAttribute="top" constant="20" id="1i7-pe-vpH"/>
+                            <constraint firstItem="j6I-Yt-VYU" firstAttribute="top" secondItem="ZvO-cs-27b" secondAttribute="bottom" constant="15" id="2MZ-ih-itj"/>
+                            <constraint firstItem="xdU-io-4d0" firstAttribute="top" secondItem="j6I-Yt-VYU" secondAttribute="bottom" constant="20" id="ILH-OV-AO2"/>
+                            <constraint firstItem="j6I-Yt-VYU" firstAttribute="centerX" secondItem="uq3-Eu-Bno" secondAttribute="centerX" id="P2b-ey-t7j"/>
+                            <constraint firstItem="xdU-io-4d0" firstAttribute="centerX" secondItem="uq3-Eu-Bno" secondAttribute="centerX" id="e49-Yl-QC9"/>
+                            <constraint firstItem="ZvO-cs-27b" firstAttribute="centerX" secondItem="uq3-Eu-Bno" secondAttribute="centerX" id="ptd-HQ-E8E"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="RPM-ga-mTI">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="camera" id="yv8-vq-NuE">
+                            <connections>
+                                <action selector="camaraTapped:" destination="84D-tw-pZX" id="5F8-ft-mxD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descripcionTextField" destination="j6I-Yt-VYU" id="Q8v-Ax-urA"/>
+                        <outlet property="elegirContactoBoton" destination="xdU-io-4d0" id="x0T-pV-uB8"/>
+                        <outlet property="imageView" destination="ZvO-cs-27b" id="F8Z-tc-qzc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ew4-Fw-9Th" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2382" y="41"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="A1s-yN-03d">
